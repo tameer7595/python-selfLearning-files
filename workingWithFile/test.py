@@ -4,4 +4,7 @@ from RenameFile import *
 
 if __name__ == '__main__':
     deleteExtension(path)
-    TypeRecovery(path)
+    try:
+        TypeRecovery(path)
+    except IsADirectoryError as ex:
+        print(ex.args)
